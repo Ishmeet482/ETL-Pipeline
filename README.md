@@ -8,19 +8,6 @@ This project demonstrates an ETL (Extract, Transform, Load) pipeline built with 
 * Automated Weather Data Extraction: Retrieves weather metrics such as temperature, windspeed, and weather codes for a specified location (London).
 * Data Transformation: Processes and structures the raw API response for efficient storage and analysis.
 * Database Integration: Stores transformed data in a PostgreSQL database, creating the table dynamically if it does not exist.
-* Scalable and Modular Design: Built with Airflow tasks for flexibility and extensibility.
-
-## Project Workflow
-
-* Extract: The pipeline uses Airflow's HttpHook to connect to the Open-Meteo API and retrieve real-time weather data for the specified latitude and longitude.
-* Transform: The extracted data is processed to extract relevant metrics such as temperature, windspeed, and weather conditions.
-* Load: Transformed data is inserted into a PostgreSQL database table (weather_data) via Airflow's PostgresHook.
-* Directory Structure
-
-* ├── dags/
-* │   └── weather_etl_pipeline.py   # The main DAG script
-* ├── docker-compose.yml            # Docker Compose configuration
-* └── README.md                     # Project documentation
 
 ## Prerequisites
 
@@ -28,6 +15,8 @@ This project demonstrates an ETL (Extract, Transform, Load) pipeline built with 
 * Docker: Installed for containerized deployment.
 * PostgreSQL: Database running in a Docker container (configured in docker-compose.yml).
 * Airflow Connections:
+     * PostgreSQL: PostgreSQL: Set up in Airflow with connection type Postgres.
+     * HTTP: Set up in Airflow for Open-Meteo API.
 * PostgreSQL: Set up in Airflow with connection type Postgres.
 * HTTP: Set up in Airflow for Open-Meteo API.
 
